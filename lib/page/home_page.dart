@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3235/3235980.png", width: 30,),
                               ),
                               Text("โอนเงิน")
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/6379/6379126.png", width: 30,),
                               ),
                               Text("เติมเงิน")
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/7176/7176657.png" ,width: 30,),
                               ),
                               Text("จ่ายบิล")
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/8338/8338916.png", width: 30,),
                               ),
                               Text("ถอนเงินไม่ใช้บัตร", overflow: TextOverflow.ellipsis,)
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3529/3529189.png", width: 30,),
                               ),
                               Text("กองทุน")
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/5709/5709623.png", width: 30,),
                               ),
                               Text("ประกัน")
@@ -207,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
+                                radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3133/3133419.png", width: 30,),
                               ),
                               Text("สินเชื่อ")
@@ -219,11 +219,11 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 24,
-                                child: Image.network("https://cdn-icons-png.flaticon.com/512/2037/2037087.png", width: 30,),
+                                radius: 32,
+                                child: Icon(Icons.add),
                               ),
                               Text(
-                                "เติมเกม",
+                                "เพิ่ม",
                                 overflow: TextOverflow.ellipsis,)
                             ],
                           ),
@@ -261,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CircleAvatar(
-                    radius: 28,
+                    radius: 32,
                     backgroundImage: NetworkImage("https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"),
                   ),
                 ],
@@ -273,23 +273,24 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withOpacity(0.2),
               blurRadius: 8,
               spreadRadius: 2,
             ),
-          ], // Optional: Box shadow
+          ],
         ),
         child: NavigationBar(
+          backgroundColor: Colors.white,
           destinations: [
             NavigationDestination(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home_filled, color: Colors.blue,),
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(Icons.payment_outlined),
+              icon: Icon(Icons.payment_outlined, color: Colors.grey,),
               label: 'Account',
             ),
             NavigationDestination(
@@ -308,11 +309,11 @@ class _HomePageState extends State<HomePage> {
               label: 'Scan',
             ),
             NavigationDestination(
-              icon: Icon(Icons.grid_view_outlined),
+              icon: Icon(Icons.grid_view_outlined, color: Colors.grey,),
               label: 'Services',
             ),
             NavigationDestination(
-              icon: Icon(Icons.settings_outlined),
+              icon: Icon(Icons.settings_outlined, color: Colors.grey,),
               label: 'Setting',
             ),
           ],
