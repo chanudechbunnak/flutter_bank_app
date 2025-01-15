@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue.shade700, Colors.white],
+            colors: [Colors.blue.shade600, Colors.white],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -32,22 +32,15 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.fromLTRB(24, 48, 24, 24),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Stack(
+                alignment: Alignment.center,
                 children: [
-                  CircleAvatar(
-                    child: Icon(Icons.person),
-                  ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start, // Align to the left
+                    crossAxisAlignment: CrossAxisAlignment.center, // Align to the left
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Krungthai",
-                            style: TextStyle(color: Colors.white, fontSize: 10),
-                          ),
-                        ],
+                      Text(
+                        "Krungthai",
+                        style: TextStyle(color: Colors.white, fontSize: 10),
                       ),
                       RichText(
                         text: TextSpan(
@@ -82,22 +75,31 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.notifications_none_outlined,
-                        color: Colors.white,
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.person),
                       ),
-                      Padding(padding: EdgeInsets.only(right: 2)),
-                      Icon(
-                        Icons.logout_outlined,
-                        color: Colors.white,
-                      )
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.notifications_none_outlined,
+                            color: Colors.white,
+                          ),
+                          Padding(padding: EdgeInsets.only(right: 8)),
+                          Icon(
+                            Icons.logout_outlined,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
                     ],
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.only(bottom: 24)),
               Container(
+                margin: EdgeInsets.only(top: 24),
                 width: double.infinity,
                 height: 100,
                 child: Swiper(
@@ -129,6 +131,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3235/3235980.png", width: 30,),
                               ),
@@ -141,6 +144,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/6379/6379126.png", width: 30,),
                               ),
@@ -153,6 +157,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/7176/7176657.png" ,width: 30,),
                               ),
@@ -165,6 +170,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/8338/8338916.png", width: 30,),
                               ),
@@ -183,6 +189,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3529/3529189.png", width: 30,),
                               ),
@@ -195,6 +202,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/5709/5709623.png", width: 30,),
                               ),
@@ -207,6 +215,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Colors.white,
                                 radius: 32,
                                 child: Image.network("https://cdn-icons-png.flaticon.com/512/3133/3133419.png", width: 30,),
                               ),
@@ -219,8 +228,9 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             children: [
                               CircleAvatar(
+                                backgroundColor: Color.fromRGBO(220, 220, 220, 0.5),
                                 radius: 32,
-                                child: Icon(Icons.add),
+                                child: Icon(Icons.add, color: Colors.white, size: 40,),
                               ),
                               Text(
                                 "เพิ่ม",
@@ -237,88 +247,76 @@ class _HomePageState extends State<HomePage> {
               Divider(
                 color: Colors.grey.shade500,
               ),
-              Padding(padding: EdgeInsets.only(bottom: 8)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                      ),
-                      "รายการโปรด"),
-                  Text(
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.blue
-                      ),
-                      "ดูทั้งหมด"),
-                ],
+              Container(
+                padding: EdgeInsets.only(top: 8, bottom: 8,),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16
+                        ),
+                        "รายการโปรด"),
+                    Text(
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.blue
+                        ),
+                        "ดูทั้งหมด"),
+                  ],
+                ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 8)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 32,
-                    backgroundImage: NetworkImage("https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"),
-                  ),
-                ],
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      radius: 32,
+                      backgroundImage: NetworkImage("https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"),
+                    ),
+                    Padding(padding: EdgeInsets.only(right: 24)),
+                    CircleAvatar(
+                      radius: 32,
+                      backgroundColor: Color.fromRGBO(220, 220, 220, 0.5),
+                      child: Icon(Icons.add, color: Colors.white, size: 40,),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 8,
-              spreadRadius: 2,
-            ),
-          ],
-        ),
-        child: NavigationBar(
-          backgroundColor: Colors.white,
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.home_filled, color: Colors.blue,),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.payment_outlined, color: Colors.grey,),
-              label: 'Account',
-            ),
-            NavigationDestination(
-              icon: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.blue.shade600, // Blue background for the circle
-                ),
-                child: Icon(
-                  Icons.qr_code_scanner_rounded,
-                  color: Colors.white, // White icon color
-                  size: 40, // Larger icon size
-                ),
-              ),
-              label: 'Scan',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.grid_view_outlined, color: Colors.grey,),
-              label: 'Services',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.settings_outlined, color: Colors.grey,),
-              label: 'Setting',
-            ),
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+            activeIcon: Icon(Icons.home_filled, size: 24,)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet),
+            label: 'Accounts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.qr_code_scanner_rounded),
+            label: 'Scan',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business_center),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }
 }
+
